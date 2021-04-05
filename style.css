@@ -1,0 +1,67 @@
+/*first link css sheet to html sheet in <head>*/
+
+body{
+    margin:0;                   /*overrides browser default white margin*/
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+#site_wrap{                     /*# references the id, not class*/
+    background-color:white;
+    height:100vh;                /* 100 viewport height*/
+    display: grid;               /* sets grid layout for wireframe layout over entire page*/
+    /*gap:5px;                     /*to show spacing between columns; header and footer columns will be variable width, others remain fixed*/
+
+    grid-template-columns:
+        1fr      /*fr means fraction, so divide entire width into 6 equal fractions */ 
+        /*200px    /* changed from 1fr - check wireframe and divide fixed columns to determine individual column width, example is 272px */
+        /*200px    /* 1fr */
+        /*200px    /* 1fr */
+        /*200px    /* 1fr */
+        repeat(4,minmax(0,200px)) /*change repeat of 200px lines, to repeat this line 4 times, with a min of 0px and max of 200px */
+        1fr; 
+    grid-template-rows:
+        40px
+        150px
+        250px
+        250px
+        1fr;                          /*rows wil not show until needed*/
+        
+    grid-template-areas:
+        "header header header header header header"   
+        "featured_header featured_header featured_header featured_header featured_header featured_header"
+        ". featured_main featured_main featured_main featured_profile ."
+        ". content content content content ."
+        "footer footer footer footer footer footer" /*literally staking claims on page property by class based on wireframe. "." means an empty column. every column accounted for */
+}
+
+/* delete this section and make individual rules for each main site area */
+/* #site_wrap > div{                 /*"site wrap sub div"*/
+ /*   background-color: aqua;     /*temp to make columns more visible*/
+/*}*/
+
+.header{
+    grid-area:header; /*add grid template area, given same name as class name generally*/
+    background-color: coral;
+}
+.featured_header{
+    grid-area:featured_header; /*add grid template area, given same name as class name generally*/
+    background-color:darkcyan ;
+}
+.featured_main{
+    grid-area:featured_main; /*add grid template area, given same name as class name generally*/
+    background-color:darkseagreen;
+}
+.featured_profile{
+    grid-area:featured_profile; /*add grid template area, given same name as class name generally*/
+    background-color:khaki;
+}
+.content{
+    grid-area:content; /*add grid template area, given same name as class name generally*/
+    background-color:aquamarine;
+}
+.footer{
+    grid-area:footer; /*add grid template area, given same name as class name generally*/
+    background-color:darkslategrey;
+}
