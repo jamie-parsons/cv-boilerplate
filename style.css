@@ -36,10 +36,12 @@ body{
         "footer footer footer footer footer footer" /*literally staking claims on page property by class based on wireframe. "." means an empty column. every column accounted for */
 }
 
-/* delete this section and make individual rules for each main site area */
 /* #site_wrap > div{                 /*"site wrap sub div"*/
  /*   background-color: aqua;     /*temp to make columns more visible*/
 /*}*/
+
+/* delete this ^ section and make individual rules for each main site area as below */
+
 
 .header{
     grid-area:header; /*add grid template area, given same name as class name generally*/
@@ -64,4 +66,28 @@ body{
 .footer{
     grid-area:footer; /*add grid template area, given same name as class name generally*/
     background-color:darkslategrey;
+}
+
+/*  RESPONSIVE MOBILE */
+
+@media screen and (max-width:480px){
+    /*.header{                                /*just testing if media query is wired properly, new color should show in header below px, switch based on width */
+    /*    background-color:yellowgreen;
+    /*}*/
+
+    /*delete ^ when conformed working and replace with entire #site_wrap as below, keping only needed sections */
+
+    #site_wrap{                     /*# references the id, not class*/
+      
+        grid-template-areas:
+            "header header header header header header"   
+            "featured_header featured_header featured_header featured_header featured_header featured_header"
+            "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+            "featured_main featured_main featured_main featured_main featured_main featured_main"
+            "content content content content content content"
+            "footer footer footer footer footer footer" /*literally staking claims on page property by class based on wireframe. "." means an empty column. every column accounted for */
+    }
+    /* .featured_profile{   /*if you want to not display profile on mobile */
+    /*    display:none;         
+    /*} */
 }
