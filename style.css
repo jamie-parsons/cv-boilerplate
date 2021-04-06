@@ -1,10 +1,13 @@
-/*first link css sheet to html sheet in <head>*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 
-body{
-    margin:0;                   /*overrides browser default white margin*/
-    padding:0;
-    font-family: Arial, Helvetica, sans-serif;
+strong, body {
+    font-family: "Helvetica Neue",sans-serif;
     line-height: 1.5em;
+    font-weight: lighter;
 }
 
 #site_wrap{                     /*# references the id, not class*/
@@ -23,42 +26,179 @@ body{
         1fr; 
     grid-template-rows:
         40px
-        150px
-        250px
+        500px
+        min-content
         250px
         1fr;                          /*rows wil not show until needed*/
         
     grid-template-areas:
-        "header header header header header header"   
+        "header header header header header header"   /*added "." so header does not span whole width*/
         "featured_header featured_header featured_header featured_header featured_header featured_header"
-        ". featured_main featured_main featured_main featured_profile ."
+        ". featured_profile featured_profile featured_main featured_main ."
         ". content content content content ."
         "footer footer footer footer footer footer" /*literally staking claims on page property by class based on wireframe. "." means an empty column. every column accounted for */
 }
 
-/* #site_wrap > div{                 /*"site wrap sub div"*/
- /*   background-color: aqua;     /*temp to make columns more visible*/
-/*}*/
-
-/* delete this ^ section and make individual rules for each main site area as below */
-
-
-.header{
-    grid-area:header; /*add grid template area, given same name as class name generally*/
-    background-color: coral;
+.header {
+    width: 100%;
+    height: 80vh;
+        grid-area:header; /*add grid template area, given same name as class name generally*/
+        background-image:url('images/iceland\ beach.jpg');
+        background-size: cover;
+        background-position: center;
 }
-.featured_header{
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+    
+
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 2;
+    padding-right: 20;
+    margin: 0;
+    transition: 1s;
+    display:flex;  
+    justify-content: space-between;
+
+}
+
+
+.logo {
+    width: 55px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    padding-right: 7px;
+
+}
+
+nav ul, .logo{
+    justify-content:center;
+
+
+}
+
+nav.black ul {
+    background: #000;
+
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding-inline: 30px;
+
+    
+}
+
+.menu-icon {                    /*hamburger menu*/
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+
+
+.featured_header {
     grid-area:featured_header; /*add grid template area, given same name as class name generally*/
-    background-color:darkcyan ;
+    overflow: hidden;
+    background: rgb(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 40px;
+    transition: 1s;
+    background-position: center;
+    place-self: center;
+    position: relative;
+    padding: 70px 120px;
+    margin-top: -30px;
+
+
+}
+.featured_header.black {
+    background: white;
+    color: black;
+    padding: 28px;
+    opacity: 0.7;
+    font-size: 20px;
+
+
+    
+
+}
+.featured_profile {
+    grid-area:featured_profile; /*add grid template area, given same name as class name generally*/
+    grid-column-start: 2;
+    
+
+}
+.featured_profile .mainprofpic {
+    width:260px;
+    border-radius: 50%;
+
 }
 .featured_main{
     grid-area:featured_main; /*add grid template area, given same name as class name generally*/
-    background-color:darkseagreen;
+    background-color:white;
+    padding: 40px;
+    background-position: center;
+    place-self: center;
+    position: relative;
+    /*border-bottom-color: black ;
+    border-bottom-style: groove;*/
+
+
 }
-.featured_profile{
-    grid-area:featured_profile; /*add grid template area, given same name as class name generally*/
-    background-color:khaki;
+.featured_main h2{
+    grid-area:featured_main; /*add grid template area, given same name as class name generally*/
+    background-color:white;
+    color: #3d3b3b;
+    display: flex;
+    place-self: center;
+  
 }
+.featured_main p{
+    grid-area:featured_main; /*add grid template area, given same name as class name generally*/
+    background-color:white;
+    font-size: 22px;
+    color: #3d3b3b;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  place-self: center;
+    
+}
+
+.content {
+    width: 100%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
 .content{
     grid-area:content; /*add grid template area, given same name as class name generally*/
     background-color:aquamarine;
@@ -68,7 +208,40 @@ body{
     background-color:darkslategrey;
 }
 
-/*  RESPONSIVE MOBILE */
+
+@media(max-width: 786px) {
+
+    .logo {
+          position: fixed;
+          top: 0;
+          margin-top: 16px;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: #000;
+    }
+
+    nav.black ul {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          text-align: center;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+
+}
 
 @media screen and (max-width:480px){
     /*.header{                                /*just testing if media query is wired properly, new color should show in header below px, switch based on width */

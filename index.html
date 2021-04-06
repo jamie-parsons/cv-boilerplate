@@ -1,31 +1,69 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> <!--referenced css style sheet in same dir-->
-</head>
-<body>
-    <div id="site_wrap"><!-- one div to surround entire site!-->
-        <div class="header">
-            HEADERGOSMASH
-        </div>
-        <div class="featured_header">
-            FEATUREDHEADER
-        </div>
-        <div class="featured_main">
-            FEATUREDMAIN
-        </div>
-        <div class="featured_profile">
-            FEATUREDPROFILE
-        </div>
-        <div class="content">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>CV Boilerplate</title>
+      <link rel="stylesheet" type="text/css" href="style.css"> <!--referenced css style sheet in same dir-->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="scripts.js"></script>
+
+   </head>
+   <body>
+      <div id="site_wrap"><!-- one div to surround entire site!-->
+      
+         <div class="header">
+            <nav>
+               
+               <div class="menu-icon">
+                  <i class="fa fa-bars fa-2x"></i>
+               </div>
+
+               <div class="menu">
+                  <ul>
+                     <li><a class="active" href="#">ABOUT</a></li> 
+                     <li><a href="#">RESEARCH</a></li>
+                     <li><div>
+                        <img src="images/volcano.png" class="logo"  alt="logo">
+                     </div></li>
+                     <li><a href="#">CV</a></li>
+                     <li><a href="#">RANDOM</a></li>
+                  </ul>
+               </div>
+
+            </nav>
+         </div>
+
+         <div class="featured_header">
+            <strong>TRAVIS PARSONS</strong>
+         </div>
+        
+         <div class="featured_profile">
+            <img src="images/profilepic.jpg" class="mainprofpic" alt="profile pic">
+         </div>
+        
+         <div class="featured_main">
+            <h2>Hello!</h2>
+            <p>If it's an exploding mountain I want to crash a drone into it and watch it burn!</p>
+         </div>
+       
+         <div class="content">
             CONTENT
-        </div>
-        <div class="footer">
+         </div>
+
+         <div class="footer">
             FOOTER
-        </div>
+         </div>
+
     </div> 
-</body>
+    </div>
+   </body>
 </html>
