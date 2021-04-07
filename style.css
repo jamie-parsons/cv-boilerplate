@@ -10,6 +10,11 @@ strong, body {
     font-weight: lighter;
 }
 
+h2 {
+    color: #508DA3;
+
+}
+
 #site_wrap{                     /*# references the id, not class*/
     background-color:white;
     height:100vh;                /* 100 viewport height*/
@@ -35,7 +40,7 @@ strong, body {
         "header header header header header header"   /*added "." so header does not span whole width*/
         "featured_header featured_header featured_header featured_header featured_header featured_header"
         ". featured_profile featured_profile featured_main featured_main ."
-        ". content content content content ."
+        ". content_left content_left content_right content_right ."
         "footer footer footer footer footer footer" /*literally staking claims on page property by class based on wireframe. "." means an empty column. every column accounted for */
 }
 
@@ -78,7 +83,7 @@ nav ul {
     display:flex;
     align-items: center;
     justify-content:center;
-    padding-right: 7px;
+    padding-right: 20px;
 
 }
 
@@ -102,7 +107,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 17px;
     padding-inline: 30px;
 
     
@@ -129,36 +134,32 @@ nav ul li a {
     color: #fff;
     font-size: 40px;
     transition: 1s;
-    background-position: center;
     place-self: center;
     position: relative;
     padding: 70px 120px;
-    margin-top: -30px;
-
-
+    margin-top: 30px;
 }
 .featured_header.black {
     background: white;
     color: black;
-    padding: 28px;
-    opacity: 0.7;
-    font-size: 20px;
-
-
-    
-
+    padding: 30px;
+    opacity: 0.8;
+    font-size: 23px;
+    margin-top: 50px;
 }
+
 .featured_profile {
     grid-area:featured_profile; /*add grid template area, given same name as class name generally*/
     grid-column-start: 2;
-    
 
 }
 .featured_profile .mainprofpic {
     width:260px;
     border-radius: 50%;
+    border: 5px solid white;
 
 }
+
 .featured_main{
     grid-area:featured_main; /*add grid template area, given same name as class name generally*/
     background-color:white;
@@ -166,6 +167,7 @@ nav ul li a {
     background-position: center;
     place-self: center;
     position: relative;
+
     /*border-bottom-color: black ;
     border-bottom-style: groove;*/
 
@@ -174,9 +176,8 @@ nav ul li a {
 .featured_main h2{
     grid-area:featured_main; /*add grid template area, given same name as class name generally*/
     background-color:white;
-    color: #3d3b3b;
-    display: flex;
-    place-self: center;
+    color: #508DA3;
+    text-align: center;
   
 }
 .featured_main p{
@@ -185,28 +186,57 @@ nav ul li a {
     font-size: 22px;
     color: #3d3b3b;
     display: flex;
-  align-items: center;
-  justify-content: center;
-  place-self: center;
-    
+    align-items: center;
+    justify-content: center;
+    place-self: center;
 }
 
-.content {
+
+.content_left {
+    grid-area:content_left; /*add grid template area, given same name as class name generally*/
+    grid-column-start: 2;
+    background-color:white;
+    padding: 40px;
+    background-position: center;
+    place-self: left;
+    position: relative;
+    grid-row-start: 1;
+    margin-top: 100vh;
+
+}
+.content_left p {
+    font-size: 18px;
+}
+
+.content_right_r  {
+    grid-area:content_right; /*add grid template area, given same name as class name generally*/
+    background-position: center;
+    place-self: center;
+    position: relative;
+    grid-row-start: 1;
+    margin-top: 100vh;
+}
+ 
+.content_right {
+    width:260px;
+    border: 5px solid white;
+   
+}
+
+.footer {
+    grid-area: footer;
+
+}
+/*.footer .footer_pic{
+    grid-area:footer; /*add grid template area, given same name as class name generally
     width: 100%;
-    margin: 4em auto;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: justify;
-}
-
-.content{
-    grid-area:content; /*add grid template area, given same name as class name generally*/
-    background-color:aquamarine;
-}
-.footer{
-    grid-area:footer; /*add grid template area, given same name as class name generally*/
-    background-color:darkslategrey;
-}
+    height: 20vh;
+        background-size: cover;
+        background-position: center;
+        background:linear-gradient(to bottom, transparent, #00F5CB, transparent); 
+      
+      
+} */ 
 
 
 @media(max-width: 786px) {
